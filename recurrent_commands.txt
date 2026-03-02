@@ -1,0 +1,24 @@
+lerobot-calibrate `
+     --robot.type=so101_follower `
+     --robot.port='COM5' `
+     --robot.id=bob  `
+     --robot.calibration_dir="path\to\lerobot-hackathon\calibration\robots\so101_follower" 
+
+
+lerobot-calibrate `
+    --teleop.type=so101_leader `
+    --teleop.port='COM6' `
+    --teleop.id=bernadette `
+    --teleop.calibration_dir="path\to\lerobot-hackathon\calibration\teleoperators\so101_leader"
+
+
+lerobot-teleoperate `
+    --robot.type=so101_follower `
+    --robot.port="COM5" `
+    --robot.id="bob" `
+    --robot.calibration_dir="path\to\lerobot-hackathon\calibration\robots\so101_follower" `
+    --teleop.type=so101_leader `
+    --teleop.port="COM6" `
+    --teleop.id="bernadette" `
+    --teleop.calibration_dir="path\to\lerobot-hackathon\calibration\teleoperators\so101_leader" `
+    --display_data=true
