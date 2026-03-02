@@ -22,3 +22,34 @@ lerobot-teleoperate `
     --teleop.id="bernadette" `
     --teleop.calibration_dir="path\to\lerobot-hackathon\calibration\teleoperators\so101_leader" `
     --display_data=true
+
+lerobot-teleoperate `
+    --robot.type=so101_follower `
+    --robot.port="COM5" `
+    --robot.id="bob" `
+    --robot.calibration_dir="path\to\lerobot-hackathon\calibration\robots\so101_follower" `
+    --robot.cameras="{ front: {type: opencv, index_or_path: 1, width: 640, height: 480, fps: 30},  top: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}" `
+    --teleop.type=so101_leader `
+    --teleop.port="COM6" `
+    --teleop.id="bernadette" `
+    --teleop.calibration_dir="path\to\lerobot-hackathon\calibration\teleoperators\so101_leader" `
+    --display_data=true
+
+
+lerobot-record `
+    --robot.type=so101_follower `
+    --robot.port='COM5' `
+    --robot.id=bob `
+    --robot.calibration_dir="path\to\lerobot-hackathon\calibration\robots\so101_follower" `
+    --teleop.type=so101_leader `
+    --teleop.port='COM6' `
+    --teleop.id=bernadette `
+    --teleop.calibration_dir="path\to\lerobot-hackathon\calibration\teleoperators\so101_leader" `
+    --display_data=true `
+    --robot.cameras="{ front: {type: opencv, index_or_path: 1, width: 640, height: 480, fps: 30},  top: {type: opencv, index_or_path: 2, width: 640, height: 480, fps: 30}}"  `
+    --dataset.root='pas_flou25' `
+    --dataset.repo_id='DEEL-AI/Hackathon_Team02' `
+    --dataset.num_episodes=25 `
+    --dataset.single_task="Pick and place one green cube on the cell indicated by the card on a 2×2 grid." `
+    --dataset.push_to_hub=True `
+    --resume=true
